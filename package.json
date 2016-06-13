@@ -1,0 +1,30 @@
+{
+  "name": "moodring",
+  "version": "1.0.0",
+  "description": "An example to illustrate Flux pattern architecture using React and d3.",
+  "main": "src/index.html",
+  "keywords": [
+    "flux",
+    "react",
+    "d3"
+  ],
+  "author": "Sarah Godoshian",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "browserify": "*",
+    "del": "^2.2.0",
+    "flux": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.3.1",
+    "object-assign": "*",
+    "reactify": "*",
+    "run-sequence": "^1.2.1",
+    "vinyl-source-stream": "*"
+  },
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*"
+  }
+}

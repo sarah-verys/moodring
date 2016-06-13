@@ -1,0 +1,14 @@
+/*
+ * Application manifest
+ *
+ * This file should only import other partials. The intended goal is
+ * that there should only be one stylesheet that is served to users to
+ * reduce the number of HTTP requests.
+ *
+ */
+body {
+  background-color: #000;
+  overflow: hidden;
+  height: 100%;
+  cursor: pointer;
+  color: violet; }
