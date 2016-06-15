@@ -5,3 +5,4 @@ docs/
 .sass-cache/
 .tmp/
 coverage/
+dist/

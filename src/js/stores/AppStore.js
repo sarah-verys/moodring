@@ -2,7 +2,9 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var AppConstants = require('../constants/AppConstants');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
-var WeFeelAPI = require('../utils/WeFeelAPI');
+var axios = require('axios');
+// TODO: make this flux-y
+// var WeFeelAPI = require('../utils/WeFeelAPI');
 
 var CHANGE_EVENT = 'change';
 
@@ -37,11 +39,19 @@ AppDispatcher.register(function(payload) {
 
 	switch (action.actionType) {
 		case AppConstants.GET_CONTINENTS:
-			WeFeelAPI.getContinents();
+			// TODO: Make this flux-y
+			// WeFeelAPI.getContinents();
+			axios.get('/weFeel')
+				.then(function(response) {
+					console.log(response.body);
+				})
+				.catch(function(error) {
+					console.error('There was an error', error.error);
+				})
 			break;
 		case AppConstants.RECEIVE_CONTINENT_RESULTS:
 			// TODO: Set State
-			AppStore.emit(CHANGE_EVENT);
+			// AppStore.emit(CHANGE_EVENT);
 			break;
 	}
 
