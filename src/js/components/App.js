@@ -1,27 +1,34 @@
 var React = require('react');
 var AppActions = require('../actions/AppActions');
 var AppStore = require('../stores/AppStore');
+var ContinentForm = require('./ContinentForm');
 
 // Holds all of our state values
 function getAppState() {
 	return {
-
+		continents: AppStore.getContinents(),
+		selectedContinent: AppStore.getSelectedContinent(),
+		currentMoods: AppStore.getCurrentMoods()
 	}
 }
 
 var App = React.createClass({
 
 	getInitialState: function() {
-		return {}
+		return getAppState();
 	},
 
-	// Flux add change listener
+	componentWillMount: function() {
+		AppActions.getContinents();
+	},
+
+	// Listening to the AppStore 
 	componentDidMount: function() {
 		AppStore.addChangeListener(this.__onChange);
 	},
 
 
-	// Flux remove change listener
+	// Stop listening to the AppStore
 	componentUnmount: function() {
 		AppStore.removeChangeListener(this.__onChange);
 	},
@@ -29,7 +36,7 @@ var App = React.createClass({
 	render: function() {
 		return (
 			<div>
-				HELLO WORLD
+				<ContinentForm />
 			</div>
 		)
 	},

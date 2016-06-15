@@ -11,7 +11,7 @@
  	  paths: {
  	  	dist: './dist',
  	  	entryFile: './src/js/main.js',
- 	  	js: './src/js',
+ 	  	js: './src/js/**/*.js',
  	    src: './src',
  	    sass: './src/styles/**/*.{sass,scss}',
  	    tmp: './tmp'
@@ -38,13 +38,11 @@
   * Compile Sass to CSS, autoprefix, move to the tmp folder
   */
  gulp.task('compile:sass', function () {
-   return gulp.src([config.paths.sass, '!./src/styles/vendor/**'])
-     // .pipe(plugins.sourcemaps.init())
+   return gulp.src(config.paths.sass)
      .pipe(sass({
        indentedSyntax: true
      }))
      .pipe(autoPrefixer())
-     // .pipe(plugins.sourcemaps.write('maps'))
      .pipe(gulp.dest(config.paths.tmp + '/styles'));
  });
 
@@ -68,10 +66,7 @@
        baseDir: [
          config.paths.tmp,
          config.paths.src
-       ],
-       routes: {
-         // '/bower_components': './bower_components'
-       }
+       ]
      },
      ghostMode: {
        clicks: true,
