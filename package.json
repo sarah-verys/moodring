@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "An example to illustrate Flux pattern architecture using React and d3.",
   "main": "src/index.html",
+  "scripts": {
+    "start": "node_modules/.bin/gulp"
+  },
   "keywords": [
     "flux",
     "react",
@@ -15,21 +18,38 @@
   "author": "Sarah Godoshian",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.12.0",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "body-parser": "^1.15.1",
     "browser-sync": "^2.13.0",
     "browserify": "*",
+    "css-loader": "^0.23.1",
     "del": "^2.2.0",
+    "express": "^4.13.4",
+    "extract-text-webpack-plugin": "^1.0.1",
     "flux": "*",
     "gulp": "*",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-sass": "^2.3.1",
+    "html-webpack-plugin": "^2.21.0",
     "http-proxy-middleware": "^0.16.0",
+    "morgan": "^1.7.0",
+    "node-sass": "^3.7.0",
     "object-assign": "*",
     "popsicle": "^6.2.0",
+    "react-hot-loader": "^1.3.0",
     "reactify": "*",
     "run-sequence": "^1.2.1",
-    "vinyl-source-stream": "*"
+    "style-loader": "^0.13.1",
+    "vinyl-source-stream": "*",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "axios": "^0.12.0",
     "d3": "^3.5.17",
     "react": "*",
     "react-dom": "*"
